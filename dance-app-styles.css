@@ -1,0 +1,900 @@
+/* 1) Ensure screen content is always on top, 
+   including filter bar + library cards. */
+  /* Main container (Screen Wrapper) styling */
+.screen-wrapper {
+  position: relative;
+  /* Use max-width for a narrower device frame, e.g. 375px, 
+     plus auto horizontal margin for centering */
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+/* Phone frame: width 100%, auto height. 
+   This replaces the old absolute positioning approach. */
+.phone-frame {
+  width: 100%;
+  height: auto;
+  position: relative; 
+  z-index: 1; /* behind the screen content */
+  pointer-events: none;
+}
+
+/* The main content inside the phone, 
+   offset from the top/bottom by 12%. 
+   Also left/right by 5%. 
+   This ensures a border inside the phone frame. */
+.screen-content {
+  position: absolute;
+  padding-bottom: 80px;
+  top: 12%;
+  left: 5%;
+  right: 5%;
+  bottom: 12%;
+  z-index: 2;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 20px; /* optional inside radius */
+}
+  
+  /* 2) Increase bottom margin under filter bar 
+     so the first card never "covers" it. */
+     .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 32px !important; /* from 16 or 24 to 32 */
+      overflow-x: auto;
+      padding-bottom: 4px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  
+  /* 3) Give the card image a slightly smaller height, 
+     preventing it from overlapping upward. */
+     .dance-card-image {
+      position: relative;
+      height: 140px !important; /* from 160px */
+    }
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container for all screens displayed horizontally */
+.screens-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; /* horizontal scroll for multiple frames */
+  width: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  position: relative;
+}
+
+/* Hide default scrollbar in WebKit */
+.screens-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* 
+  Add left & right spacers so 
+  the first & last screens aren’t cut off.
+*/
+.screens-container::before,
+.screens-container::after {
+  content: '';
+  flex: 0 0 20px; /* 20px spacer on each side */
+}
+
+/* Screen Wrapper with Phone Frame */
+.screen-wrapper {
+  position: relative;
+  /* Slightly wider to accommodate iPhone 14 Pro shape */
+  min-width: 390px;
+  height: 740px;
+}
+
+/* Phone frame is now behind (z-index:1), so content is on top */
+.phone-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* behind the content */
+  pointer-events: none;
+}
+
+/* Content is on top of the phone frame */
+.screen-content {
+  position: absolute;
+  top: 16px; 
+  padding-bottom: 80px;
+  left: 16px; 
+  right: 16px; 
+  bottom: 16px; 
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 2; /* ensures filters, text, etc. appear over the frame */
+  display: flex;
+  flex-direction: column;
+}
+
+.screen-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Header with title and description */
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.screen-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.screen-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+  padding: 0 15px;
+}
+
+/* Feature cards on home screen */
+.feature-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.feature-card {
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.feature-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Button styles */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+}
+
+.secondary-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #e0e0e0;
+}
+
+.primary-btn:hover {
+  box-shadow: 0 4px 12px rgba(106, 17, 203, 0.3);
+}
+
+.secondary-btn:hover {
+  background-color: #e8e8e8;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+/* Footer styling */
+.screen-footnote {
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+/* Upload form styling */
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #6a11cb;
+  outline: none;
+}
+
+.form-group textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+/* Recording section styling */
+.recording-section {
+  margin-bottom: 16px;
+}
+
+.recording-preview {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  margin-bottom: 12px;
+}
+
+.camera-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.camera-placeholder p {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.upload-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.record-btn,
+.video-upload-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.record-btn {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.record-btn:hover {
+  background-color: #ff7875;
+}
+
+.video-upload-btn:hover {
+  background-color: #e8e8e8;
+}
+
+.video-upload-btn input[type="file"] {
+  display: none;
+}
+
+/* AI skeleton preview */
+.ai-skeleton-preview {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.ai-skeleton-preview h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.ai-skeleton-preview p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.ai-skeleton-preview img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.submit-btn {
+  margin-top: 16px;
+  width: 100%;
+}
+
+/* Practice mode styling */
+.dance-info {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.dance-info h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.dance-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tag {
+  padding: 6px 12px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #666;
+}
+
+.practice-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.video-compare {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.video-compare h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.video-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-controls {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
+.video-control-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Camera feed & Practice button */
+.camera-tracking {
+  margin-bottom: 16px;
+}
+
+.camera-tracking h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.camera-feed {
+  width: 100%;
+  height: 140px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+/* Place button below feed so there's no overlap */
+.camera-btn {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 24px;
+  font-size: 14px;
+  background-color: #6a11cb;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Accuracy score styling */
+.accuracy-score {
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}
+
+.score-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.score-header h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
+
+.score-percentage {
+  font-size: 18px;
+  font-weight: 700;
+  color: #6a11cb;
+}
+
+.feedback-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.tip p {
+  font-size: 14px;
+  color: #666;
+  flex: 1;
+}
+
+/* Dance library styling */
+.search-container {
+  margin-bottom: 16px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  height: 48px;
+  border-radius: 24px;
+  background-color: #f0f0f0;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Increase bottom margin so the first card won't overlap filters */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 16px;
+  overflow-x: visible; /* Changed from auto to visible */
+  flex-wrap: nowrap; /* Ensures items stay on a single line */
+  justify-content: flex-start; /* Align items to the start */
+  padding: 0 0 8px 0; /* Remove left/right padding that might cause cropping */
+}
+
+.filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+  flex-shrink: 0; /* Prevent filters from shrinking */
+}
+
+.filter-chip.active {
+  background-color: #6a11cb;
+  color: white;
+}
+
+/* Dance cards styling */
+.dance-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dance-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dance-card-image {
+  position: relative;
+  height: 160px;
+}
+
+.dance-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dance-difficulty {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 12px;
+}
+
+.dance-card-content {
+  padding: 16px;
+}
+
+.dance-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #000;
+}
+
+.dance-meta {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.dance-description {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.dance-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dance-stats {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #666;
+}
+
+.learn-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Future scope styling */
+.future-scope-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.future-feature {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  background-color: #f9f9f9;
+}
+
+.future-feature .feature-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #000;
+}
+
+.feature-content p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.signup-section {
+  text-align: center;
+  padding: 16px;
+  border-radius: 16px;
+  background-color: #f9f9f9;
+}
+
+.signup-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.signup-section p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.email-signup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.email-signup input {
+  flex: 1 1 60%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+  min-width: 0;
+}
+
+.email-signup input:focus {
+  outline: none;
+  border-color: #6a11cb;
+}
+
+.email-signup button {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Animation for button hover states */
+.primary-btn,
+.secondary-btn,
+.record-btn,
+.video-upload-btn,
+.learn-btn,
+.filter-chip {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.primary-btn:hover,
+.record-btn:hover,
+.learn-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments for iPhone */
+@media (max-width: 430px) {
+  .screen-wrapper {
+    min-width: 100%;
+    height: auto;
+    aspect-ratio: 430/932;
+  }
+  
+  .screen-content {
+    padding: 16px;
+  }
+  
+  .header {
+    margin-bottom: 16px;
+  }
+  
+  .screen-title {
+    font-size: 20px;
+  }
+  
+  .feature-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Bottom Navigation Bar */
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  right: 16px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.6); /* 90% opacity */
+  backdrop-filter: blur(15px); /* Optional: Glassmorphism effect */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #e0e0e0;
+  border-radius: 18px 18px 0 0; /* Rounded corners only on top */
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 3;
+  margin-bottom: 10px; /* Add some space at the bottom */
+}
+
+.nav-item {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  text-decoration: none; /* Remove underline from links */
+  height: 100%;
+  padding: 8px 0;
+}
+
+.nav-item svg {
+  width: 22px;
+  height: 22px;
+}
+
+.nav-item:hover {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.nav-item.active {
+  color: #4a5af8; /* Update this to match your theme color - used indigo based on UI */
+  font-weight: 600;
+}
+
+.nav-item.active svg {
+  fill: #4a5af8;
+  stroke: #4a5af8;
+}

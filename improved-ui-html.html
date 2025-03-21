@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cultural Dance Preservation App - UI</title>
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="dance-app-styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Container to hold all screens horizontally -->
+<div class="screens-container">
+
+  <!-- SCREEN 1: Home / Landing -->
+  <div class="screen-wrapper">
+    <img 
+      src="https://res.cloudinary.com/demo/image/upload/v1687261123/iphone-14-pro-new-frame.png" 
+      alt="." 
+      class="phone-frame"
+    />
+
+    <!-- Actual app screen content -->
+    <div class="screen-content">
+      <div class="header">
+        <h1 class="screen-title">Rhythm Heritage</h1>
+        <p class="screen-description">
+          Preserve and share the beauty of cultural dances for future generations
+        </p>
+      </div>
+
+      <!-- Main Features -->
+      <div class="feature-cards">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" 
+                 stroke-linecap="round" stroke-linejoin="round" 
+                 viewBox="0 0 24 24" class="icon">
+              <path d="M9 18V5l12-2v13"></path>
+              <circle cx="6" cy="18" r="3"></circle>
+              <circle cx="18" cy="16" r="3"></circle>
+            </svg>
+          </div>
+          <h3>Learn Dances</h3>
+          <p>Learn traditional movements with AI guidance</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" 
+                 stroke-linecap="round" stroke-linejoin="round" 
+                 viewBox="0 0 24 24" class="icon">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+          </div>
+          <h3>Share Knowledge</h3>
+          <p>Record and preserve your cultural heritage</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" 
+                 stroke-linecap="round" stroke-linejoin="round" 
+                 viewBox="0 0 24 24" class="icon">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </div>
+          <h3>Build Community</h3>
+          <p>Connect with dancers across generations</p>
+        </div>
+      </div>
+
+      <!-- Simple navigation or CTA buttons -->
+      <div class="button-group">
+        <button class="primary-btn">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" 
+               stroke-linecap="round" stroke-linejoin="round" 
+               viewBox="0 0 24 24" class="icon">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="10 8 16 12 10 16 10 8"></polygon>
+          </svg>
+          <span>Start Learning</span>
+        </button>
+        <button class="secondary-btn">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" 
+               stroke-linecap="round" stroke-linejoin="round" 
+               viewBox="0 0 24 24" class="icon">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          <span>Record Dance</span>
+        </button>
+      </div>
+
+      <!-- A subtle footer or note -->
+      <p class="screen-footnote">
+        Version 1.0 • Preserving Heritage Together
+      </p>
+    </div>
+    <!-- Bottom Nav Bar -->
+    <div class="bottom-nav">
+      <a href="explore.html" class="nav-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+        <span>Explore</span>
+      </a>
+      <a href="practice.html" class="nav-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        <span>Practice</span>
+      </a>
+      <a href="library.html" class="nav-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span>Library</span>
+      </a>
+      <a href="profile.html" class="nav-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>Profile</span>
+      </a>
+    </div>
+  </div>
+  <!-- END of SCREEN 1 -->
+
+  <!-- SCREEN 2: Upload a Dance -->
+  <div class="screen-wrapper">
+    <img 
+      src="https://res.cloudinary.com/demo/image/upload/v1687261123/iphone-14-pro-new-frame.png" 
+      alt="." 
+      class="phone-frame"
+    />
+    <div class="screen-content">
+      <div class="header">
+        <h1 class="screen-title">Record Your Heritage</h1>
+        <p class="screen-description">
+          Share your traditional dance knowledge with future generations
+        </p>
+      </div>
+
+      <form class="upload-form">
+        <div class="form-group">
+          <label for="danceTitle">Dance Name</label>
+          <input type="text" id="danceTitle" placeholder="What is this dance called?" />
+        </div>
+
+        <div class="form-group">
+          <label for="danceRegion">Region/Culture</label>
+          <input type="text" id="danceRegion" placeholder="Where is this dance from?" />
+        </div>
+
+        <div class="form-group">
+          <label for="danceDesc">Cultural Significance</label>
+          <textarea id="danceDesc" placeholder="Tell us about this dance's history, meaning, and when it's performed..."></textarea>
+        </div>
+        
+        <!-- Video or Recording controls -->
+        <div class="recording-section">
+          <div class="recording-preview">
+            <div class="camera-placeholder">
+              <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" 
+                   stroke-linecap="round" stroke-linejoin="round" 
+                   viewBox="0 0 24 24" class="icon">
+                <path d="M23 7l-7 5 7 5V7z"></path>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+              </svg>
+              <p>Tap to start recording</p>
+            </div>
+          </div>
+
+          <div class="upload-controls">
+            <button type="button" class="record-btn">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" 
+                   stroke-linecap="round" stroke-linejoin="round" 
+                   viewBox="0 0 24 24" class="icon">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <span>Record Video</span>
+            </button>
+            <label class="video-upload-btn">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" 
+                   stroke-linecap="round" stroke-linejoin="round" 
+                   viewBox="0 0 24 24" class="icon">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              <span>Upload Video</span>
+              <input type="file" accept="video/*" />
+            </label>
+          </div>
+        </div>
+
+        <!-- AI-generated skeleton placeholder -->
+        <div class="ai-skeleton-preview">
+          <h3>AI Movement Analysis</h3>
+          <p>Our system will automatically create a skeleton animation to help learners</p>
+          <!-- Example placeholder (in reality, this would be a dynamic animation) -->
+          <img 
+            src="https://images.pexels.com/photos/3775588/pexels-photo-3775588.jpeg" 
+            alt="AI Skeleton Dance Placeholder"
+          />
+        </div>
+
+        <button type="submit" class="primary-btn submit-btn">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" 
+               stroke-linecap="round" stroke-linejoin="round" 
+               viewBox="0 0 24 24" class="icon">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          <span>Share with Community</span>
+        </button>
+      </form>
+    </div>
+    <!-- Bottom Nav Bar -->
+<div class="bottom-nav">
+  <a href="explore.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+    <span>Explore</span>
+  </a>
+  <a href="practice.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+    <span>Practice</span>
+  </a>
+  <a href="library.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+    <span>Library</span>
+  </a>
+  <a href="profile.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    <span>Profile</span>
+  </a>
+</div>
+  </div>
+  <!-- END of SCREEN 2 -->
+
+  <!-- SCREEN 3: Learn & Practice a Dance -->
+  <div class="screen-wrapper">
+    <img 
+      src="https://res.cloudinary.com/demo/image/upload/v1687261123/iphone-14-pro-new-frame.png" 
+      alt="." 
+      class="phone-frame"
+    />
+    <div class="screen-content">
+      <div class="header">
+        <h1 class="screen-title">Practice Mode</h1>
+        <p class="screen-description">
+          Learn the movements with AI guidance and get real-time feedback
+        </p>
+      </div>
+
+      <!-- Dance Title and Quick Info -->
+      <div class="dance-info">
+        <h2>Harvest Festival Dance</h2>
+        <div class="dance-tags">
+          <span class="tag">Southeast Asia</span>
+          <span class="tag">Beginner</span>
+          <span class="tag">Celebration</span>
+        </div>
+      </div>
+
+      <div class="practice-section">
+        <!-- Original Dance Video -->
+        <div class="video-compare">
+          <h3>Original Video</h3>
+          <div class="video-container">
+            <img 
+              src="https://images.pexels.com/photos/3775588/pexels-photo-3775588.jpeg" 
+              alt="Original Dance Video Placeholder"
+            />
+            <div class="video-controls">
+              <button class="video-control-btn">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round" 
+                    viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- AI Skeleton Comparison
+        <div class="video-compare">
+          <h3>Movement Guide</h3>
+          <div class="video-container">
+            <img 
+              src="https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg" 
+              alt="AI Skeleton Placeholder"
+            />
+            <div class="video-controls">
+              <button class="video-control-btn">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round" 
+                    viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+      <!-- Real-time camera tracking -->
+      <div class="camera-tracking">
+        <h3>Practice with Movement Guide</h3>
+        <div class="camera-feed">
+          <div class="camera-placeholder">
+            <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" 
+                 stroke-linecap="round" stroke-linejoin="round"
+                 viewBox="0 0 24 24" class="icon">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7
+                       a2 2 0 0 1 2-2h3l2-3h8l2 3h3a2 2 0 0 1 2 2z">
+              </path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+            <p>Tap to enable camera</p>
+          </div>
+          <button class="camera-btn">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" 
+                 stroke-linecap="round" stroke-linejoin="round"
+                 viewBox="0 0 24 24" class="icon">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7
+                       a2 2 0 0 1 2-2h3l2-3h8l2 3h3a2 2 0 0 1 2 2z">
+              </path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+            <span>Start Practice</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Feedback / Accuracy Score -->
+      <div class="accuracy-score">
+        <div class="score-header">
+          <h3>Performance</h3>
+          <div class="score-percentage">78%</div>
+        </div>
+        <div class="feedback-tips">
+          <div class="tip">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" 
+                 stroke-linecap="round" stroke-linejoin="round"
+                 viewBox="0 0 24 24" class="icon">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <p>Keep your arms raised higher in the first movement</p>
+          </div>
+          <div class="tip">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" 
+                 stroke-linecap="round" stroke-linejoin="round"
+                 viewBox="0 0 24 24" class="icon">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <p>Great rhythm in the middle section!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Nav Bar -->
+<div class="bottom-nav">
+  <a href="explore.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+    <span>Explore</span>
+  </a>
+  <a href="practice.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+    <span>Practice</span>
+  </a>
+  <a href="library.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+    <span>Library</span>
+  </a>
+  <a href="profile.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    <span>Profile</span>
+  </a>
+</div>
+  </div>
+  <!-- END of SCREEN 3 -->
+
+  <!-- SCREEN 4: Dance Library & Exploration -->
+  <div class="screen-wrapper">
+    <img 
+      src="https://res.cloudinary.com/demo/image/upload/v1687261123/iphone-14-pro-new-frame.png" 
+      alt="." 
+      class="phone-frame"
+    />
+    <div class="screen-content">
+      <div class="header">
+        <h1 class="screen-title">Dance Library</h1>
+        <p class="screen-description">
+          Explore traditional dances from cultures around the world
+        </p>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <div class="search-bar">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" 
+               stroke-linecap="round" stroke-linejoin="round" 
+               viewBox="0 0 24 24" class="icon">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" placeholder="Search dances by name, region, or style" />
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-chip active">All</button>
+        <button class="filter-chip">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" 
+               stroke-linecap="round" stroke-linejoin="round" 
+               viewBox="0 0 24 24" class="icon">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M2 12h20"></path>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          Region
+        </button>
+        <button class="filter-chip">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" 
+               stroke-linecap="round" stroke-linejoin="round" 
+               viewBox="0 0 24 24" class="icon">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+          Style
+        </button>
+        <button class="filter-chip">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" 
+               stroke-linecap="round" stroke-linejoin="round" 
+               viewBox="0 0 24 24" class="icon">
+            <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
+          </svg>
+          Difficulty
+        </button>
+      </div> 
+
+      <!-- List of dances in a card layout -->
+      <div class="dance-cards-container">
+        <div class="dance-card">
+          <div class="dance-card-image">
+            <img 
+              src="https://images.pexels.com/photos/3775588/pexels-photo-3775588.jpeg" 
+              alt="Harvest Festival Dance" 
+            />
+            <div class="dance-difficulty">Beginner</div>
+          </div>
+          <div class="dance-card-content">
+            <h3 class="dance-title">Harvest Festival Dance</h3>
+            <p class="dance-meta">Southeast Asia</p>
+            <p class="dance-description">Celebrating the rice harvest with graceful movements honoring nature's bounty</p>
+            <div class="dance-card-footer">
+              <span class="dance-stats">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round" 
+                    viewBox="0 0 24 24" class="icon">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                1,248
+              </span>
+              <button class="learn-btn">Learn</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dance-card">
+          <div class="dance-card-image">
+            <img 
+              src="https://images.pexels.com/photos/3775588/pexels-photo-3775588.jpeg" 
+              alt="Mountain Ritual Steps" 
+            />
+            <div class="dance-difficulty">Intermediate</div>
+          </div>
+          <div class="dance-card-content">
+            <h3 class="dance-title">Mountain Ritual Steps</h3>
+            <p class="dance-meta">Andes Region</p>
+            <p class="dance-description">Ancient ceremonial movements performed during seasonal transitions</p>
+            <div class="dance-card-footer">
+              <span class="dance-stats">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round" 
+                    viewBox="0 0 24 24" class="icon">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                892
+              </span>
+              <button class="learn-btn">Learn</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dance-card">
+          <div class="dance-card-image">
+            <img 
+              src="https://images.pexels.com/photos/3775588/pexels-photo-3775588.jpeg" 
+              alt="Water Blessing Dance" 
+            />
+            <div class="dance-difficulty">Advanced</div>
+          </div>
+          <div class="dance-card-content">
+            <h3 class="dance-title">Water Blessing Dance</h3>
+            <p class="dance-meta">Pacific Islands</p>
+            <p class="dance-description">Flowing movements honoring the life-giving properties of water</p>
+            <div class="dance-card-footer">
+              <span class="dance-stats">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round" 
+                    viewBox="0 0 24 24" class="icon">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                763
+              </span>
+              <button class="learn-btn">Learn</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Nav Bar -->
+<div class="bottom-nav">
+  <a href="explore.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+    <span>Explore</span>
+  </a>
+  <a href="practice.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+    <span>Practice</span>
+  </a>
+  <a href="library.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+    <span>Library</span>
+  </a>
+  <a href="profile.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    <span>Profile</span>
+  </a>
+</div>
+  </div>
+  <!-- END of SCREEN 4 -->
+
+  <!-- SCREEN 5: Future Scope & Community -->
+  <div class="screen-wrapper">
+    <img 
+      src="https://res.cloudinary.com/demo/image/upload/v1687261123/iphone-14-pro-new-frame.png" 
+      alt="." 
+      class="phone-frame"
+    />
+    <div class="screen-content">
+      <div class="header">
+        <h1 class="screen-title">Coming Soon</h1>
+        <p class="screen-description">
+          New features being developed to enhance your cultural dance experience
+        </p>
+      </div>
+
+      <!-- Simple announcements or placeholders -->
+      <div class="future-scope-list">
+        <div class="future-feature">
+          <div class="feature-icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round"
+                 viewBox="0 0 24 24" class="icon">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="8" y1="15" x2="16" y2="15"></line>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h3>AI Cultural Assistant</h3>
+            <p>Chat with our AI to learn about dance history, cultural context, and performance tips</p>
+          </div>
+        </div>
+        
+        <div class="future-feature">
+          <div class="feature-icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round"
+                 viewBox="0 0 24 24" class="icon">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h3>Group Dance Recognition</h3>
+            <p>Practice traditional group dances with multiple dancers tracked simultaneously</p>
+          </div>
+        </div>
+        
+        <div class="future-feature">
+          <div class="feature-icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round"
+                 viewBox="0 0 24 24" class="icon">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h3>Community Discussions</h3>
+            <p>Connect with elders and learners to discuss cultural context and techniques</p>
+          </div>
+        </div>
+        
+        <div class="future-feature">
+          <div class="feature-icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round"
+                 viewBox="0 0 24 24" class="icon">
+              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+              <path d="M2 12h20"></path>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h3>Interactive World Map</h3>
+            <p>Explore dances by geographic region with cultural and historical context</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="signup-section">
+        <h3>Be the first to know</h3>
+        <p>Get notified when new features are released</p>
+        <div class="email-signup">
+          <input type="email" placeholder="Your email address" />
+          <button class="primary-btn">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" 
+                 stroke-linecap="round" stroke-linejoin="round" 
+                 viewBox="0 0 24 24" class="icon">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+            <span>Notify Me</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Nav Bar -->
+<div class="bottom-nav">
+  <a href="explore.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+    <span>Explore</span>
+  </a>
+  <a href="practice.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+    <span>Practice</span>
+  </a>
+  <a href="library.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+    <span>Library</span>
+  </a>
+  <a href="profile.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    <span>Profile</span>
+  </a>
+</div>
+  </div>
+  <!-- END of SCREEN 5 -->
+
+</div> <!-- END .screens-container -->
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# Ignore large model checkpoints and datasets
+*.bin
+*.pkl
+*.h5
+*.ckpt
+*.pth
+*.pt
+*.t7
+*.onnx
+*.npy
+*.npz
+*.tar
+*.gz
+*.zip
+
+# Ignore videos and media
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.flv
+*.webm
+
+# Ignore dataset folders
+data/raw/
+data/processed/
+data/vibe_output/
+
+# Logs and debug files
+*.log
+logs/
+debug/
+*.out
+*.err
+
+# Ignore SQLite database
+*.db
+*.sqlite
+*.sqlite3
+
+# Ignore temporary and system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore compiled Python files
+*.so
+*.dylib
+
+# Ignore Node.js dependencies (if any frontend work is done)
+node_modules/
+
+# Ignore cache and generated files
+cache/
+*.cache
